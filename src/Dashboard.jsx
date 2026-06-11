@@ -11,7 +11,12 @@ const Dashboard = () => {
     { id: "landing", label: "Landing Kit" },
   ];
   const [count, setCount] = useState(0);
-  const buttonstyle = 'bg-blue-500 text-white mr-4 rounded mb-5 px-4 py-2 justify-center'
+  const buttonstyle =
+    "bg-blue-500 text-white mr-4 rounded mb-5 px-4 py-2 justify-center";
+
+  const [name, setName] = useState("");
+  const [bio, setBio] = useState("");
+  const [email, setEmail] = useState("");
   return (
     <div className="flex h-screen bg-gray-100 font-sans text-gray-900">
       <aside className="w-64 bg-white border-r flex flex-col">
@@ -46,18 +51,59 @@ const Dashboard = () => {
               <h2>Counter Component</h2>
               <div className="items-center">
                 <h1 className="flex justify-center mb-4">{count}</h1>
-                <button className={buttonstyle} onClick={() => setCount(count + 1)}>Increase</button>
-                <button className={buttonstyle} onClick={() => setCount(0)}>Reset</button>
-                <button className={buttonstyle} onClick={() => setCount(count - 1)}>Decrease</button>
+                <button
+                  className={buttonstyle}
+                  onClick={() => setCount(count + 1)}
+                >
+                  Increase
+                </button>
+                <button className={buttonstyle} onClick={() => setCount(0)}>
+                  Reset
+                </button>
+                <button
+                  className={buttonstyle}
+                  onClick={() => setCount(count - 1)}
+                >
+                  Decrease
+                </button>
               </div>
             </div>
           )}
 
-           {activeTab === "profile" && (
+          {activeTab === "profile" && (
             <div>
-                <h2>Social Profile</h2>
+              <h2>Social Profile</h2>
+              <div className="flex justify-between bg-white rounded-2xl shadow-md p-6 mb-6">
+                <div className="flex flex-col">
+                <p>{name || "Your Name"}</p>
+                <p>{email || "Your Email"}</p>
+                <p>{bio || "Something About You"}</p>
+                </div>
+
+                <div className="w-24 h24 rounded-full bg-gray-300 flex items-center justify-center">
+                  IMG
+                </div>
+              </div>
+
+              <div className="flex flex-col space-y-5">
+                <input
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Type In Name"
+                ></input>
+                <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Type In Email"
+                ></input>
+                <input
+                  value={bio}
+                  onChange={(e) => setBio(e.target.value)}
+                  placeholder="Type In Bio"
+                ></input>
+              </div>
             </div>
-           )}
+          )}
         </div>
       </main>
     </div>
