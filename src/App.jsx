@@ -14,6 +14,7 @@ import PropsDemo from "./PropsDemo";
 import Contact from "./Contact";
 import Objects from "./Objects";
 import Dashboard from "./Dashboard";
+import Effect from "./Effect"
 
 const App = () => {
   return (
@@ -33,8 +34,9 @@ const App = () => {
       {/* <MouseChange /> */}
       {/* <PropsDemo /> */}
       {/* <Contact /> */}
-      <Objects />
+      {/* <Objects /> */}
       <Dashboard/>
+      {/* <Effect/> */}
 
     </div>
   );
