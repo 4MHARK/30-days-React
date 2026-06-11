@@ -13,6 +13,7 @@ import MouseChange from "./MouseChange";
 import PropsDemo from "./PropsDemo";
 import Contact from "./Contact";
 import Objects from "./Objects";
+import Dashboard from "./Dashboard";
 
 const App = () => {
   return (
@@ -33,6 +34,8 @@ const App = () => {
       {/* <PropsDemo /> */}
       {/* <Contact /> */}
       <Objects />
+      <Dashboard/>
+
     </div>
   );
 };
